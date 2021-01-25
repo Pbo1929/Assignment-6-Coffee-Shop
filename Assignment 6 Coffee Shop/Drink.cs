@@ -6,30 +6,25 @@ namespace Assignment_6_Coffee_Shop
 {
     class Drink
     {
-        private string name;
-        private bool Sold;
-        private int price;
-
-        public static int NumberOfDrinksSold = 0;
+        private string name; //tea coffee  juice
+        private int price;   //45   50      35
 
         public Drink(string name, int price)
         {
-
             this.name = name;
-            this.Sold = false;
-            this.price = price;
+            if (name == "Coffee") price = 50;
+            if (name == "Tea") price = 45;
+            if (name == "Juice") price = 35;
 
-            
+
         }
-
-        public void BuyDrink()
+        public string GetName()
         {
-            if (Sold == false)
-            {
-                Sold = true;
-                NumberOfDrinksSold = NumberOfDrinksSold + 1;
-
-            }
+            return name;
+        }
+        public int GetPrice()
+        {
+            return price;
         }
     }
 }
